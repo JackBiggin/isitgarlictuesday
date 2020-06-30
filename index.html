@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #yesno { font-size: 72px; }
+        #text { font-size: 32px; }
+        body { text-align: center; font-family: sans-serif; font-weight: bold; padding: 2em;}
+    </style>
+</head>
+<body>
+    <div id="yesno"></div>
+    <div id="text"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var date = new Date()
+            var currentMonth = date.getMonth()
+            var currentDay = date.getDay()
+            var currentMonthDay = date.getDate()
+            if(currentMonth == 6 && currentDay == 2 && ((currentMonthDay + 7 < 31) || (currentMonthDay > 25)) && currentMonthDay > 20) {
+                document.getElementById("yesno").innerHTML = "YES"
+                document.getElementById("text").innerHTML = "it is Garlic Tuesday! 🧄"
+            } else {
+                document.getElementById("yesno").innerHTML = "NO"
+                document.getElementById("text").innerHTML = "it is not Garlic Tuesday! 😢"
+            }
+        });
+    </script>
+</body>
